@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBObjectBuilder.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBObjectId.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBObjectBuilder.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBObjectId.cpp" />
+  </ItemGroup>
+</Project>

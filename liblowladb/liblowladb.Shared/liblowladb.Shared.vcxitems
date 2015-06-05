@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{991f3f38-cc9c-48af-8d6e-17b6dc8520c5}</ItemsProjectGuid>
+    <ItemsRootNamespace>liblowladb</ItemsRootNamespace>
+    <ItemsProjectName>liblowladb.Shared</ItemsProjectName>
+    <CodeSharingProject>248F659F-DAC5-46E8-AC09-60EC9FC95053</CodeSharingProject>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\ConvertUTF.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bcon.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bson.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\encoding.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bytevector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\btree.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\btreeInt.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\hash.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\msvc.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\mutex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\opcodes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\os.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\os_setup.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\pager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\parse.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\pcache.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqliteInt.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqliteLimit.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vdbe.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vdbeInt.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vxworks.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\integration.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\json\json.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\lowladb.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\md5.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteCursor.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteKey.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\TeamstudioException.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16character.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16string.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16stringbuilder.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\ConvertUTF.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\utf16string.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bcon.c">
+      <CompileAsWinRT>false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bson.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\encoding.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\numbers.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3-lowla.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\json\jsoncpp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\lowladb.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\md5.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteCursor.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteKey.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\TeamstudioException.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16stringbuilder.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)integration_win.cpp">
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemGroup>
+</Project>

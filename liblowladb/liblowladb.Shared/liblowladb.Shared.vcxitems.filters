@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)targetver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bcon.h">
+      <Filter>bson</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bson.h">
+      <Filter>bson</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\encoding.h">
+      <Filter>bson</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\btree.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\btreeInt.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\hash.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\msvc.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\mutex.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\opcodes.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\os.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\os_setup.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\pager.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\parse.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\pcache.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqliteInt.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqliteLimit.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vdbe.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vdbeInt.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\vxworks.h">
+      <Filter>datastore</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\json\json.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bytevector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\integration.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\lowladb.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\md5.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteCursor.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteKey.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\TeamstudioException.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16character.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16string.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16stringbuilder.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\ConvertUTF.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="bson">
+      <UniqueIdentifier>{98855bcc-6e5e-4e0c-9b7a-c67fc138bd19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="datastore">
+      <UniqueIdentifier>{707ce2d1-d7fd-4f00-a549-5093ea17a331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{26ca1751-a23a-4178-8b12-a17a88041bed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bcon.c">
+      <Filter>bson</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\bson.c">
+      <Filter>bson</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\encoding.c">
+      <Filter>bson</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\bson\numbers.c">
+      <Filter>bson</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3.c">
+      <Filter>datastore</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\datastore\sqlite3-lowla.c">
+      <Filter>datastore</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\json\jsoncpp.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\lowladb.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\md5.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteCursor.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\SqliteKey.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\TeamstudioException.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\src\utf16stringbuilder.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\ConvertUTF.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\liblowladb\platform-src\windows\utf16string.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)integration_win.cpp" />
+  </ItemGroup>
+</Project>
