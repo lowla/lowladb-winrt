@@ -4,26 +4,40 @@
 #include <codecvt>
 #include <utf16string.h>
 
+#include "LDBObjectBuilder.h"
 #include "LDBObjectId.h"
 
 using namespace LowlaDB;
+using namespace Windows::Data::Json;
 
 LDBObject::LDBObject(CLowlaDBBson::ptr bson) : m_bson(bson)
 {
 }
 
-const char *LDBObject::asBson()
+LDBObject ^LDBObject::ObjectWithJson(Platform::String ^json)
+{
+	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+	std::string utf = converter.to_bytes(json->Data());
+
+	CLowlaDBBson::ptr bson = lowladb_json_to_bson(utf.c_str());
+	if (bson) {
+		return ref new LDBObject(bson);
+	}
+	return nullptr;
+}
+
+const char *LDBObject::AsBson()
 {
 	return m_bson->data();
 }
 
-bool LDBObject::containsField(Platform::String ^field)
+bool LDBObject::ContainsField(Platform::String ^field)
 {
 	utf16string str((utf16char *)field->Data(), 0, field->Length());
 	return m_bson->containsKey(str.c_str(utf16string::UTF8));
 }
 
-double LDBObject::doubleForField(Platform::String ^field)
+double LDBObject::DoubleForField(Platform::String ^field)
 {
 	utf16string str((utf16char *)field->Data(), 0, field->Length());
 	double answer;
@@ -33,7 +47,7 @@ double LDBObject::doubleForField(Platform::String ^field)
 	return 0.0;
 }
 
-Platform::String ^LDBObject::stringForField(Platform::String ^field)
+Platform::String ^LDBObject::StringForField(Platform::String ^field)
 {
 	utf16string str((utf16char *)field->Data(), 0, field->Length());
 	const char *answer;
@@ -44,7 +58,7 @@ Platform::String ^LDBObject::stringForField(Platform::String ^field)
 	return "";
 }
 
-LDBObject ^LDBObject::objectForField(Platform::String ^field)
+LDBObject ^LDBObject::ObjectForField(Platform::String ^field)
 {
 	utf16string str((utf16char *)field->Data(), 0, field->Length());
 	CLowlaDBBson::ptr answer;
@@ -54,12 +68,86 @@ LDBObject ^LDBObject::objectForField(Platform::String ^field)
 	return nullptr;
 }
 
-LDBObjectId ^LDBObject::objectIdForField(Platform::String ^field)
+LDBObjectId ^LDBObject::ObjectIdForField(Platform::String ^field)
 {
 	utf16string str((utf16char *)field->Data(), 0, field->Length());
 	char answer[CLowlaDBBson::OID_SIZE];
 	if (m_bson->oidForKey(str.c_str(utf16string::UTF8), answer)) {
 		return ref new LDBObjectId(answer);
+	}
+	return nullptr;
+}
+
+bool LDBObject::BoolForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	bool answer;
+	if (m_bson->boolForKey(str.c_str(utf16string::UTF8), &answer)) {
+		return answer;
+	}
+	return false;
+}
+
+Windows::Foundation::DateTime LDBObject::DateForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	int64 answer;
+	if (m_bson->dateForKey(str.c_str(utf16string::UTF8), &answer)) {
+		/*
+		SYSTEMTIME st19700101;
+		memset(&st19700101, 0, sizeof(SYSTEMTIME));
+		st19700101.wYear = 1970;
+		st19700101.wMonth = 1;
+		st19700101.wDay = 1;
+		int64 base;
+		SystemTimeToFileTime(&st19700101, (FILETIME *)&base);
+		*/
+		int64 base = 116444736000000000;
+
+		// Multiply by 10000 to convert millis to 100ns ticks
+		Windows::Foundation::DateTime ret;
+		ret.UniversalTime = answer * 10000 + base;
+		return ret;
+	}
+	return Windows::Foundation::DateTime();
+}
+
+int64_t LDBObject::DateRawForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	int64 answer;
+	if (m_bson->dateForKey(str.c_str(utf16string::UTF8), &answer)) {
+		return answer;
+	}
+	return 0;
+}
+
+int LDBObject::IntForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	int answer;
+	if (m_bson->intForKey(str.c_str(utf16string::UTF8), &answer)) {
+		return answer;
+	}
+	return 0;
+}
+
+int64_t LDBObject::LongForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	int64_t answer;
+	if (m_bson->longForKey(str.c_str(utf16string::UTF8), &answer)) {
+		return answer;
+	}
+	return 0;
+}
+
+LDBObject ^LDBObject::ArrayForField(Platform::String ^field)
+{
+	utf16string str((utf16char *)field->Data(), 0, field->Length());
+	CLowlaDBBson::ptr answer;
+	if (m_bson->arrayForKey(str.c_str(utf16string::UTF8), &answer)) {
+		return ref new LDBObject(answer);
 	}
 	return nullptr;
 }

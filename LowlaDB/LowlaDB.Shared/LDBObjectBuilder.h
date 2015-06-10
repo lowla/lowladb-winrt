@@ -10,12 +10,20 @@ namespace LowlaDB
 	public ref class LDBObjectBuilder sealed
 	{
 	public:
-		static LDBObjectBuilder ^builder();
-		LDBObjectBuilder ^appendDouble(Platform::String ^name, double value);
-		LDBObjectBuilder ^appendString(Platform::String ^name, Platform::String ^value);
-		LDBObjectBuilder ^appendObject(Platform::String ^name, LDBObject ^value);
-		LDBObjectBuilder ^appendObjectId(Platform::String ^name, LDBObjectId ^value);
-		LDBObject ^finish();
+		static LDBObjectBuilder ^Builder();
+		LDBObjectBuilder ^AppendDouble(Platform::String ^name, double value);
+		LDBObjectBuilder ^AppendString(Platform::String ^name, Platform::String ^value);
+		LDBObjectBuilder ^AppendObject(Platform::String ^name, LDBObject ^value);
+		LDBObjectBuilder ^AppendObjectId(Platform::String ^name, LDBObjectId ^value);
+		LDBObjectBuilder ^AppendBool(Platform::String ^name, bool value);
+		LDBObjectBuilder ^AppendDate(Platform::String ^name, Windows::Foundation::DateTime dt);
+		LDBObjectBuilder ^AppendInt(Platform::String ^name, int value);
+		LDBObjectBuilder ^AppendLong(Platform::String ^name, int64_t value);
+
+		LDBObjectBuilder ^StartArray(Platform::String ^name);
+		LDBObjectBuilder ^FinishArray();
+
+		LDBObject ^Finish();
 
 	internal:
 		LDBObjectBuilder();

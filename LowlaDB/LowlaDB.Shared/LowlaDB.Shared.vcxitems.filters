@@ -5,6 +5,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)LDBObjectBuilder.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LDBObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LDBObjectId.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBClient.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBDb.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBCollection.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBWriteResult.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LDBCursor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -13,5 +18,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)LDBObjectBuilder.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LDBObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LDBObjectId.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBClient.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBDb.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBCollection.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBWriteResult.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LDBCursor.cpp" />
   </ItemGroup>
 </Project>

@@ -6,14 +6,14 @@
 
 using namespace LowlaDB;
 
-LDBObjectId ^LDBObjectId::generate()
+LDBObjectId ^LDBObjectId::Generate()
 {
 	char buffer[CLowlaDBBson::OID_SIZE];
 	CLowlaDBBson::oidGenerate(buffer);
 	return ref new LDBObjectId(buffer);
 }
 
-Platform::String ^LDBObjectId::hexString()
+Platform::String ^LDBObjectId::ToHexString()
 {
 	char buffer[CLowlaDBBson::OID_STRING_SIZE];
 	CLowlaDBBson::oidToString(m_bytes, buffer);
@@ -21,7 +21,7 @@ Platform::String ^LDBObjectId::hexString()
 	return ref new Platform::String(&converter.from_bytes(buffer).front());
 }
 
-const char *LDBObjectId::bytes()
+const char *LDBObjectId::GetBytes()
 {
 	return m_bytes;
 }

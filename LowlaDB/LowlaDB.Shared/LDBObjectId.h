@@ -7,9 +7,9 @@ namespace LowlaDB
 	public ref class LDBObjectId sealed
 	{
 	public:
-		static LDBObjectId ^generate();
+		static LDBObjectId ^Generate();
 
-		Platform::String ^hexString();
+		Platform::String ^ToHexString();
 
 		bool Equals(Platform::Object ^obj);
 		int GetHashCode();
@@ -17,7 +17,7 @@ namespace LowlaDB
 	internal:
 		LDBObjectId(const char *bytes);
 		LDBObjectId(Platform::String ^hexString);
-		const char *bytes();
+		const char *GetBytes();
 
 	private:
 		char m_bytes[CLowlaDBBson::OID_SIZE];

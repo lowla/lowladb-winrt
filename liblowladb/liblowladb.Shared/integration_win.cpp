@@ -24,13 +24,21 @@ utf16string SysNormalizePath(utf16string const &path)
 
 utf16string SysGetDataDirectory()
 {
-	StorageFolder ^localFolder = ApplicationData::Current->LocalFolder;
+	static critical_section cs;
+	critical_section::scoped_lock lock(cs);
 
-	auto t = create_task(localFolder->CreateFolderAsync(L"LowlaDB", CreationCollisionOption::OpenIfExists));
-	StorageFolder ^folder = t.get();
-	
-	Platform::String ^str = folder->Path;
-	return utf16string((utf16char *)str->Data(), 0, str->Length());
+	static utf16string dir;
+	if (dir.length() != 0) {
+		return dir;
+	}
+
+	StorageFolder ^localFolder = ApplicationData::Current->LocalFolder;
+	Platform::String ^str = localFolder->Path;
+	str += ref new Platform::String(L"\\LowlaDB");
+	dir = utf16string((utf16char *)str->Data(), 0, str->Length());
+
+	CreateDirectory(str->Data(), nullptr);
+	return dir;
 }
 
 std::vector<utf16string> SysListFiles()
